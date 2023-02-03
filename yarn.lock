@@ -4333,6 +4333,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"backend@workspace:devtools/backend":
+  version: 0.0.0-use.local
+  resolution: "backend@workspace:devtools/backend"
+  languageName: unknown
+  linkType: soft
+
 "bail@npm:^2.0.0":
   version: 2.0.2
   resolution: "bail@npm:2.0.2"
@@ -4774,6 +4780,12 @@ __metadata:
   checksum: c57cf9dd0791e2f18a5ee9c1a299ae6e801ff58fee96dc8bfd0dcb4738a6ce58dd252a3605b1c93c6418fe4f9d5093b28ffbf4d66648cb2a9c67eaef9679be2f
   languageName: node
   linkType: hard
+
+"chrome@workspace:devtools/shells/chrome":
+  version: 0.0.0-use.local
+  resolution: "chrome@workspace:devtools/shells/chrome"
+  languageName: unknown
+  linkType: soft
 
 "ci-info@npm:^2.0.0":
   version: 2.0.0
@@ -5519,9 +5531,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"devtools@workspace:devtools":
+"devtools@workspace:devtools/frontend":
   version: 0.0.0-use.local
-  resolution: "devtools@workspace:devtools"
+  resolution: "devtools@workspace:devtools/frontend"
   dependencies:
     "@types/react": ^18.0.27
     "@types/react-dom": ^18.0.10

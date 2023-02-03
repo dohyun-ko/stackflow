@@ -6,7 +6,7 @@
     "docs",
     "core",
     "demo",
-    "devtools",
+    "devtools/**",
     "integrations/*",
     "packages/*",
     "extensions/*"
