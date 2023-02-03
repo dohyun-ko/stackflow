@@ -7267,7 +7267,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@vitejs/plugin-react", "virtual:505fc1ab22154fc1c75350b68bb179de7861c6795b1504803e64deb37aaa0ead17ca7f80fe2c082133daa6c43ffaba437e0a5d3593750ef6fbf4b2c91e871faf#npm:3.1.0"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:505fc1ab22154fc1c75350b68bb179de7861c6795b1504803e64deb37aaa0ead17ca7f80fe2c082133daa6c43ffaba437e0a5d3593750ef6fbf4b2c91e871faf#npm:18.2.0"],\
-            ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=701156"],\
+            ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=701156"],\
             ["vite", "virtual:505fc1ab22154fc1c75350b68bb179de7861c6795b1504803e64deb37aaa0ead17ca7f80fe2c082133daa6c43ffaba437e0a5d3593750ef6fbf4b2c91e871faf#npm:4.1.1"]\
           ],\
           "linkType": "SOFT"\
@@ -16096,13 +16096,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/typescript-patch-0cb3c99916-9096d8f6c1.zip/node_modules/typescript/",\
           "packageDependencies": [\
             ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=701156"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=701156", {\
-          "packageLocation": "./.yarn/cache/typescript-patch-01f4757fa9-2eee5c37ca.zip/node_modules/typescript/",\
-          "packageDependencies": [\
-            ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=701156"]\
           ],\
           "linkType": "HARD"\
         }]\
