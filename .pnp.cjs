@@ -4423,6 +4423,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
+        ["virtual:682b89699bd0fe56fb912213354b4794425d04e4f16b5f5030df2bf3522490e4cf669c7edcaaefaab8c765ed8427d03985ff223eb6a0be40a7c024d6d75547a7#npm:0.2.21", {\
+          "packageLocation": "./.yarn/__virtual__/@swc-jest-virtual-6deacca41f/0/cache/@swc-jest-npm-0.2.21-c576292610-8208032fc7.zip/node_modules/@swc/jest/",\
+          "packageDependencies": [\
+            ["@swc/jest", "virtual:682b89699bd0fe56fb912213354b4794425d04e4f16b5f5030df2bf3522490e4cf669c7edcaaefaab8c765ed8427d03985ff223eb6a0be40a7c024d6d75547a7#npm:0.2.21"],\
+            ["@jest/create-cache-key-function", "npm:27.5.1"],\
+            ["@swc/core", "npm:1.3.32"],\
+            ["@types/swc__core", null]\
+          ],\
+          "packagePeers": [\
+            "@swc/core",\
+            "@types/swc__core"\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["virtual:b327d7e228fba669b88a8bb23bcf526374e46fa67e617b1e6848e8a205357fee5ce94b47c49b5a570fd9e8a44fa218a13cd00e2eca327c99114cbd21d72ecf9c#npm:0.2.21", {\
           "packageLocation": "./.yarn/__virtual__/@swc-jest-virtual-55617b7504/0/cache/@swc-jest-npm-0.2.21-c576292610-8208032fc7.zip/node_modules/@swc/jest/",\
           "packageDependencies": [\
@@ -7431,11 +7445,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./devtools/frontend/",\
           "packageDependencies": [\
             ["devtools", "workspace:devtools/frontend"],\
+            ["@stackflow/core", "workspace:core"],\
+            ["@swc/core", "npm:1.3.32"],\
+            ["@swc/jest", "virtual:682b89699bd0fe56fb912213354b4794425d04e4f16b5f5030df2bf3522490e4cf669c7edcaaefaab8c765ed8427d03985ff223eb6a0be40a7c024d6d75547a7#npm:0.2.21"],\
+            ["@types/jest", "npm:28.1.6"],\
             ["@types/react", "npm:18.0.15"],\
             ["@types/react-dom", "npm:18.0.5"],\
             ["@vanilla-extract/css", "npm:1.9.3"],\
             ["@vanilla-extract/vite-plugin", "virtual:682b89699bd0fe56fb912213354b4794425d04e4f16b5f5030df2bf3522490e4cf669c7edcaaefaab8c765ed8427d03985ff223eb6a0be40a7c024d6d75547a7#npm:3.7.1"],\
             ["@vitejs/plugin-react-swc", "virtual:682b89699bd0fe56fb912213354b4794425d04e4f16b5f5030df2bf3522490e4cf669c7edcaaefaab8c765ed8427d03985ff223eb6a0be40a7c024d6d75547a7#npm:3.1.0"],\
+            ["jest", "virtual:b327d7e228fba669b88a8bb23bcf526374e46fa67e617b1e6848e8a205357fee5ce94b47c49b5a570fd9e8a44fa218a13cd00e2eca327c99114cbd21d72ecf9c#npm:28.1.0"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:413bca98ff76262f6f1f73762ccc4b7edee04a5da42f3d6b9ed2cb2d6dbc397b2094da59b50f6e828091c88e7b5f86990feff596c43f0eb50a58fc42aae64a20#npm:18.2.0"],\
             ["react-router-dom", "virtual:682b89699bd0fe56fb912213354b4794425d04e4f16b5f5030df2bf3522490e4cf669c7edcaaefaab8c765ed8427d03985ff223eb6a0be40a7c024d6d75547a7#npm:6.8.0"],\
