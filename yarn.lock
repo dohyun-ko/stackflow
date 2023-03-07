@@ -5029,6 +5029,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"classnames@npm:^2.0.0":
+  version: 2.3.2
+  resolution: "classnames@npm:2.3.2"
+  checksum: 2c62199789618d95545c872787137262e741f9db13328e216b093eea91c85ef2bfb152c1f9e63027204e2559a006a92eb74147d46c800a9f96297ae1d9f96f4e
+  languageName: node
+  linkType: hard
+
 "classnames@npm:^2.2.6":
   version: 2.3.1
   resolution: "classnames@npm:2.3.1"
@@ -5791,10 +5798,15 @@ __metadata:
     "@vanilla-extract/css": ^1.9.3
     "@vanilla-extract/vite-plugin": ^3.7.1
     "@vitejs/plugin-react-swc": ^3.1.0
+    ajv: ^8.12.0
     jest: ^28.1.0
     react: ^18.2.0
     react-dom: ^18.2.0
+    react-modal: ^3.16.1
     typescript: ^4.7.4
+    uniforms: ^4.0.0-alpha.1
+    uniforms-bridge-json-schema: ^4.0.0-alpha.1
+    uniforms-semantic: ^4.0.0-alpha.1
     vite: ^4.1.0
   languageName: unknown
   linkType: soft
@@ -6587,6 +6599,13 @@ __metadata:
     signal-exit: ^3.0.3
     strip-final-newline: ^2.0.0
   checksum: fba9022c8c8c15ed862847e94c252b3d946036d7547af310e344a527e59021fd8b6bb0723883ea87044dc4f0201f949046993124a42ccb0855cae5bf8c786343
+  languageName: node
+  linkType: hard
+
+"exenv@npm:^1.2.0":
+  version: 1.2.2
+  resolution: "exenv@npm:1.2.2"
+  checksum: a894f3b60ab8419e0b6eec99c690a009c8276b4c90655ccaf7d28faba2de3a6b93b3d92210f9dc5efd36058d44f04098f6bbccef99859151104bfd49939904dc
   languageName: node
   linkType: hard
 
@@ -7805,6 +7824,15 @@ __metadata:
     from2: ^2.1.1
     p-is-promise: ^1.1.0
   checksum: e6e1a202227b20c446c251ef95348b3e8503cdc75aa2a09076f8821fc42c1b7fd43fabaeb8ed3cf9eb875942cfa4510b66949c5317997aa640921cc9bbadcd17
+  languageName: node
+  linkType: hard
+
+"invariant@npm:^2.0.0":
+  version: 2.2.4
+  resolution: "invariant@npm:2.2.4"
+  dependencies:
+    loose-envify: ^1.0.0
+  checksum: cc3182d793aad82a8d1f0af697b462939cb46066ec48bbf1707c150ad5fad6406137e91a262022c269702e01621f35ef60269f6c0d7fd178487959809acdfb14
   languageName: node
   linkType: hard
 
@@ -9216,7 +9244,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.4, lodash@npm:^4.7.0":
+"lodash@npm:^4.0.0, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.4, lodash@npm:^4.7.0":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
@@ -11895,6 +11923,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-lifecycles-compat@npm:^3.0.0":
+  version: 3.0.4
+  resolution: "react-lifecycles-compat@npm:3.0.4"
+  checksum: a904b0fc0a8eeb15a148c9feb7bc17cec7ef96e71188280061fc340043fd6d8ee3ff233381f0e8f95c1cf926210b2c4a31f38182c8f35ac55057e453d6df204f
+  languageName: node
+  linkType: hard
+
+"react-modal@npm:^3.16.1":
+  version: 3.16.1
+  resolution: "react-modal@npm:3.16.1"
+  dependencies:
+    exenv: ^1.2.0
+    prop-types: ^15.7.2
+    react-lifecycles-compat: ^3.0.0
+    warning: ^4.0.3
+  peerDependencies:
+    react: ^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18
+    react-dom: ^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18
+  checksum: 978936e9320fad839c039b9ee4de55d40888156cb40e093615d6fbc2ff07139d5db06f14782cb7767f780bd5fb57956778669426c535ebc0068a7a03882c7e75
+  languageName: node
+  linkType: hard
+
 "react-refresh@npm:^0.13.0":
   version: 0.13.0
   resolution: "react-refresh@npm:0.13.0"
@@ -11902,7 +11952,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^18.1.0, react@npm:^18.2.0":
+"react@npm:*, react@npm:^18.1.0, react@npm:^18.2.0":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
   dependencies:
@@ -13449,6 +13499,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tslib@npm:^2.2.0":
+  version: 2.5.0
+  resolution: "tslib@npm:2.5.0"
+  checksum: ae3ed5f9ce29932d049908ebfdf21b3a003a85653a9a140d614da6b767a93ef94f460e52c3d787f0e4f383546981713f165037dc2274df212ea9f8a4541004e1
+  languageName: node
+  linkType: hard
+
 "tsutils@npm:^3.21.0":
   version: 3.21.0
   resolution: "tsutils@npm:3.21.0"
@@ -13662,6 +13719,46 @@ __metadata:
     trough: ^2.0.0
     vfile: ^5.0.0
   checksum: 053e7c65ede644607f87bd625a299e4b709869d2f76ec8138569e6e886903b6988b21cd9699e471eda42bee189527be0a9dac05936f1d069a5e65d0125d5d756
+  languageName: node
+  linkType: hard
+
+"uniforms-bridge-json-schema@npm:^4.0.0-alpha.1":
+  version: 4.0.0-alpha.1
+  resolution: "uniforms-bridge-json-schema@npm:4.0.0-alpha.1"
+  dependencies:
+    invariant: ^2.0.0
+    lodash: ^4.0.0
+    tslib: ^2.2.0
+    uniforms: ^4.0.0-alpha.1
+  checksum: 0b63340dc75a8edf63baa1c868423105e8673554e294c4439317abb523a1a7862fd6834179c8ad623cb9b05292df22b09b661b5dcfeccab75400a0de932490a8
+  languageName: node
+  linkType: hard
+
+"uniforms-semantic@npm:^4.0.0-alpha.1":
+  version: 4.0.0-alpha.1
+  resolution: "uniforms-semantic@npm:4.0.0-alpha.1"
+  dependencies:
+    classnames: ^2.0.0
+    invariant: ^2.0.0
+    lodash: ^4.0.0
+    tslib: ^2.2.0
+    uniforms: ^4.0.0-alpha.1
+  peerDependencies:
+    react: ^18.0.0 || ^17.0.0 || ^16.8.0
+  checksum: b1b3e13769a704455e5665c6ebc67ae411aadb1de341c7f8c58b130ae762525496006fc0147619c516a1ce235e5f53aac084444f12eb194d9d32d22f478ee8e8
+  languageName: node
+  linkType: hard
+
+"uniforms@npm:^4.0.0-alpha.1":
+  version: 4.0.0-alpha.1
+  resolution: "uniforms@npm:4.0.0-alpha.1"
+  dependencies:
+    invariant: ^2.0.0
+    lodash: ^4.0.0
+    tslib: ^2.2.0
+  peerDependencies:
+    react: ^18.0.0 || ^17.0.0 || ^16.8.0
+  checksum: 5a8f5a0af855620e14592c9cad81104d15e5862265530a0a1f6a639f90ba70c28801c621af2b5232270bbbeeb145f94626c4f8bd6867f6db4f5f7b68d53ce53e
   languageName: node
   linkType: hard
 
