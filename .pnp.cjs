@@ -3823,6 +3823,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@stackflow/core", "workspace:core"],\
             ["@swc/core", "npm:1.3.40"],\
             ["@swc/jest", "virtual:9267a8c7a8197fe98a427296be831b128932c88cc3adceb051f2d9b5eeffb2f4b5c162b336fbbf1b8b24ad59ac8a7f62602f782c4d55e1c742a240d86ed9ef62#npm:0.2.24"],\
+            ["@types/chrome", "npm:0.0.223"],\
             ["@types/jest", "npm:28.1.6"],\
             ["@types/react", "npm:18.0.15"],\
             ["@types/react-dom", "npm:18.0.5"],\
@@ -4790,6 +4791,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/chrome", [\
+        ["npm:0.0.223", {\
+          "packageLocation": "./.yarn/cache/@types-chrome-npm-0.0.223-b09e03d5e8-17cdb32396.zip/node_modules/@types/chrome/",\
+          "packageDependencies": [\
+            ["@types/chrome", "npm:0.0.223"],\
+            ["@types/filesystem", "npm:0.0.32"],\
+            ["@types/har-format", "npm:1.2.10"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@types/debug", [\
         ["npm:4.1.7", {\
           "packageLocation": "./.yarn/cache/@types-debug-npm-4.1.7-f54c81f8db-0a7b89d8ed.zip/node_modules/@types/debug/",\
@@ -4834,6 +4846,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/filesystem", [\
+        ["npm:0.0.32", {\
+          "packageLocation": "./.yarn/cache/@types-filesystem-npm-0.0.32-f9e6035fd6-4b9079d200.zip/node_modules/@types/filesystem/",\
+          "packageDependencies": [\
+            ["@types/filesystem", "npm:0.0.32"],\
+            ["@types/filewriter", "npm:0.0.29"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/filewriter", [\
+        ["npm:0.0.29", {\
+          "packageLocation": "./.yarn/cache/@types-filewriter-npm-0.0.29-08151cd903-0c58aa875c.zip/node_modules/@types/filewriter/",\
+          "packageDependencies": [\
+            ["@types/filewriter", "npm:0.0.29"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@types/glob", [\
         ["npm:7.2.0", {\
           "packageLocation": "./.yarn/cache/@types-glob-npm-7.2.0-772334bf9a-6ae717fedf.zip/node_modules/@types/glob/",\
@@ -4851,6 +4882,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@types/graceful-fs", "npm:4.1.5"],\
             ["@types/node", "npm:18.6.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/har-format", [\
+        ["npm:1.2.10", {\
+          "packageLocation": "./.yarn/cache/@types-har-format-npm-1.2.10-5a11b22f1e-14c0118d80.zip/node_modules/@types/har-format/",\
+          "packageDependencies": [\
+            ["@types/har-format", "npm:1.2.10"]\
           ],\
           "linkType": "HARD"\
         }]\
