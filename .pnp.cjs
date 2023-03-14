@@ -3830,6 +3830,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@vanilla-extract/vite-plugin", "virtual:9267a8c7a8197fe98a427296be831b128932c88cc3adceb051f2d9b5eeffb2f4b5c162b336fbbf1b8b24ad59ac8a7f62602f782c4d55e1c742a240d86ed9ef62#npm:3.8.0"],\
             ["@vitejs/plugin-react-swc", "virtual:9267a8c7a8197fe98a427296be831b128932c88cc3adceb051f2d9b5eeffb2f4b5c162b336fbbf1b8b24ad59ac8a7f62602f782c4d55e1c742a240d86ed9ef62#npm:3.2.0"],\
             ["ajv", "npm:8.12.0"],\
+            ["chrome-launcher", "npm:0.15.1"],\
             ["jest", "virtual:b327d7e228fba669b88a8bb23bcf526374e46fa67e617b1e6848e8a205357fee5ce94b47c49b5a570fd9e8a44fa218a13cd00e2eca327c99114cbd21d72ecf9c#npm:28.1.0"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:413bca98ff76262f6f1f73762ccc4b7edee04a5da42f3d6b9ed2cb2d6dbc397b2094da59b50f6e828091c88e7b5f86990feff596c43f0eb50a58fc42aae64a20#npm:18.2.0"],\
@@ -6845,6 +6846,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/chownr-npm-2.0.0-638f1c9c61-c57cf9dd07.zip/node_modules/chownr/",\
           "packageDependencies": [\
             ["chownr", "npm:2.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["chrome-launcher", [\
+        ["npm:0.15.1", {\
+          "packageLocation": "./.yarn/cache/chrome-launcher-npm-0.15.1-93903cae0a-b534221b83.zip/node_modules/chrome-launcher/",\
+          "packageDependencies": [\
+            ["chrome-launcher", "npm:0.15.1"],\
+            ["@types/node", "npm:18.6.3"],\
+            ["escape-string-regexp", "npm:4.0.0"],\
+            ["is-wsl", "npm:2.2.0"],\
+            ["lighthouse-logger", "npm:1.3.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -10277,6 +10291,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["is-docker", [\
+        ["npm:2.2.1", {\
+          "packageLocation": "./.yarn/cache/is-docker-npm-2.2.1-3f18a53aff-3fef7ddbf0.zip/node_modules/is-docker/",\
+          "packageDependencies": [\
+            ["is-docker", "npm:2.2.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["is-extendable", [\
         ["npm:0.1.1", {\
           "packageLocation": "./.yarn/cache/is-extendable-npm-0.1.1-322b4649ec-3875571d20.zip/node_modules/is-extendable/",\
@@ -10550,6 +10573,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["is-weakref", "npm:1.0.2"],\
             ["call-bind", "npm:1.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["is-wsl", [\
+        ["npm:2.2.0", {\
+          "packageLocation": "./.yarn/cache/is-wsl-npm-2.2.0-2ba10d6393-20849846ae.zip/node_modules/is-wsl/",\
+          "packageDependencies": [\
+            ["is-wsl", "npm:2.2.0"],\
+            ["is-docker", "npm:2.2.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -12038,6 +12071,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["lighthouse-logger", [\
+        ["npm:1.3.0", {\
+          "packageLocation": "./.yarn/cache/lighthouse-logger-npm-1.3.0-3f60201e4a-82655f1862.zip/node_modules/lighthouse-logger/",\
+          "packageDependencies": [\
+            ["lighthouse-logger", "npm:1.3.0"],\
+            ["debug", "virtual:be5f7ea4fe9ec08b4ebdd7bd4e312a842bf5e42a0aae5129e4ec0f1292afe48639e8a8c776d2072143b46710e5eb73507e75928dcbad893140c9f8c1497a5149#npm:2.6.9"],\
+            ["marky", "npm:1.2.5"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["lilconfig", [\
         ["npm:2.0.6", {\
           "packageLocation": "./.yarn/cache/lilconfig-npm-2.0.6-6231346eaf-40a3cd72f1.zip/node_modules/lilconfig/",\
@@ -12443,6 +12487,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packagePeers": [\
             "@types/react",\
             "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["marky", [\
+        ["npm:1.2.5", {\
+          "packageLocation": "./.yarn/cache/marky-npm-1.2.5-007e6cc885-823b946677.zip/node_modules/marky/",\
+          "packageDependencies": [\
+            ["marky", "npm:1.2.5"]\
           ],\
           "linkType": "HARD"\
         }]\
