@@ -4,9 +4,9 @@ import { useActions } from "@stackflow/react";
 import { assignInlineVars } from "@vanilla-extract/dynamic";
 import { useRef } from "react";
 
+import type { GlobalVars } from "../basicUIPlugin.css";
+import { globalVars } from "../basicUIPlugin.css";
 import { useLazy, useNullableActivity, useStyleEffect } from "../hooks";
-import type { GlobalVars } from "../theme.css";
-import { globalVars } from "../theme.css";
 import { compactMap } from "../utils";
 import * as css from "./Modal.css";
 
@@ -83,7 +83,7 @@ const Modal: React.FC<ModalProps> = ({
           [css.vars.transitionDuration]:
             transitionState === "enter-active" ||
             transitionState === "exit-active"
-              ? globalVars.transitionDuration
+              ? globalVars.computedTransitionDuration
               : "0ms",
         }),
       )}

@@ -5,6 +5,8 @@ import { assignInlineVars } from "@vanilla-extract/dynamic";
 import { createContext, useContext, useMemo, useRef } from "react";
 
 import { useGlobalOptions } from "../basicUIPlugin";
+import type { GlobalVars } from "../basicUIPlugin.css";
+import { globalVars } from "../basicUIPlugin.css";
 import {
   useLazy,
   useNullableActivity,
@@ -12,8 +14,6 @@ import {
   useStyleEffectOffset,
   useStyleEffectSwipeBack,
 } from "../hooks";
-import type { GlobalVars } from "../theme.css";
-import { globalVars } from "../theme.css";
 import type { PropOf } from "../utils";
 import { compactMap } from "../utils";
 import AppBar from "./AppBar";
@@ -31,7 +31,10 @@ export function useAppScreen() {
 export type AppScreenProps = Partial<
   Pick<GlobalVars, "backgroundColor" | "dimBackgroundColor">
 > & {
-  appBar?: Omit<PropOf<typeof AppBar>, "theme" | "ref" | "key">;
+  appBar?: Omit<
+    PropOf<typeof AppBar>,
+    "theme" | "modalPresentationStyle" | "ref" | "key"
+  >;
   preventSwipeBack?: boolean;
   modalPresentationStyle?: "fullScreen";
   children: React.ReactNode;
@@ -140,7 +143,7 @@ const AppScreen: React.FC<AppScreenProps> = ({
             [css.vars.transitionDuration]:
               transitionState === "enter-active" ||
               transitionState === "exit-active"
-                ? globalVars.transitionDuration
+                ? globalVars.computedTransitionDuration
                 : "0ms",
           }),
         )}

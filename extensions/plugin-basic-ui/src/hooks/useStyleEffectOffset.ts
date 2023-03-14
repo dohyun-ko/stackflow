@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 
-import { globalVars } from "../theme.css";
+import { globalVars } from "../basicUIPlugin.css";
 import { listenOnce, noop, requestNextFrame } from "../utils";
 import { useStyleEffect } from "./useStyleEffect";
 
@@ -52,7 +52,8 @@ export function useStyleEffectOffset({
                   return;
                 }
 
-                ref.current.style.transition = globalVars.transitionDuration;
+                ref.current.style.transition =
+                  globalVars.computedTransitionDuration;
                 ref.current.style.transform = transform;
               });
 

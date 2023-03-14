@@ -30,13 +30,29 @@ function prependQuestionMarkInSearchParams(searchParams: URLSearchParams) {
   return searchParams;
 }
 
-export function makeTemplate(templateStr: string) {
-  const pattern = new UrlPattern(`${templateStr}(/)`);
+/**
+ * import { UrlPatternOptions } from "url-pattern"
+ */
+export interface UrlPatternOptions {
+  escapeChar?: string;
+  segmentNameStartChar?: string;
+  segmentValueCharset?: string;
+  segmentNameCharset?: string;
+  optionalSegmentStartChar?: string;
+  optionalSegmentEndChar?: string;
+  wildcardChar?: string;
+}
+
+export function makeTemplate(
+  templateStr: string,
+  urlPatternOptions?: UrlPatternOptions,
+) {
+  const pattern = new UrlPattern(`${templateStr}(/)`, urlPatternOptions);
 
   return {
     fill(params: { [key: string]: string | undefined }) {
       const pathname = pattern.stringify(params);
-      const pathParams = pattern.match(pathname) ?? {};
+      const pathParams = pattern.match(pathname);
 
       const searchParamsMap = { ...params };
 

@@ -1,17 +1,20 @@
 import { id, makeEvent } from "@stackflow/core";
 import type { StackflowReactPlugin } from "@stackflow/react";
+import type { History, Listener } from "history";
+import { createBrowserHistory, createMemoryHistory } from "history";
 
 import {
   getCurrentState,
-  parseState,
   pushState,
   replaceState,
+  safeParseState,
 } from "./historyState";
 import { last } from "./last";
+import type { UrlPatternOptions } from "./makeTemplate";
 import { makeTemplate } from "./makeTemplate";
 import { normalizeRoute } from "./normalizeRoute";
+import { makeQueue } from "./queue";
 import { RoutesProvider } from "./RoutesContext";
-import { isServer } from "./utils";
 
 const SECOND = 1000;
 const MINUTE = 60 * SECOND;
@@ -22,6 +25,8 @@ type HistorySyncPluginOptions<K extends string> = {
   };
   fallbackActivity: (args: { initialContext: any }) => K;
   useHash?: boolean;
+  history?: History;
+  urlPatternOptions?: UrlPatternOptions;
 };
 export function historySyncPlugin<
   T extends { [activityName: string]: unknown },
@@ -30,9 +35,21 @@ export function historySyncPlugin<
 ): StackflowReactPlugin<T> {
   type K = Extract<keyof T, string>;
 
+  const history =
+    options.history ??
+    (typeof window === "undefined"
+      ? createMemoryHistory({})
+      : createBrowserHistory({
+          window,
+        }));
+
+  const { location } = history;
+
   return () => {
     let pushFlag = 0;
     let popFlag = 0;
+
+    const queue = makeQueue(history);
 
     return {
       key: "plugin-history-sync",
@@ -44,7 +61,9 @@ export function historySyncPlugin<
         );
       },
       overrideInitialEvents({ initialContext }) {
-        const initialHistoryState = parseState(getCurrentState());
+        const initialHistoryState = safeParseState(
+          getCurrentState({ history }),
+        );
 
         if (initialHistoryState) {
           return [
@@ -72,15 +91,11 @@ export function historySyncPlugin<
             return initialContext.req.path as string;
           }
 
-          if (isServer()) {
-            return null;
-          }
-
           if (options.useHash) {
-            return window.location.hash.split("#")[1] ?? "/";
+            return location.hash.split("#")[1] ?? "/";
           }
 
-          return window.location.pathname + window.location.search;
+          return location.pathname + location.search;
         }
 
         const path = resolvePath();
@@ -94,7 +109,7 @@ export function historySyncPlugin<
             for (let j = 0; j < routes.length; j += 1) {
               const route = routes[j];
 
-              const template = makeTemplate(route);
+              const template = makeTemplate(route, options.urlPatternOptions);
               const activityParams = template.parse(path);
               const matched = !!activityParams;
 
@@ -142,30 +157,33 @@ export function historySyncPlugin<
       },
       onInit({ actions: { getStack, dispatchEvent, push, stepPush } }) {
         const rootActivity = getStack().activities[0];
+
         const template = makeTemplate(
           normalizeRoute(options.routes[rootActivity.name])[0],
+          options.urlPatternOptions,
         );
-
-        (window as any).getStack = getStack;
 
         const lastStep = last(rootActivity.steps);
 
-        replaceState({
-          url: template.fill(rootActivity.params),
-          state: {
-            activity: rootActivity,
-            step: lastStep,
-          },
-          useHash: options.useHash,
-        });
+        queue(() =>
+          replaceState({
+            history,
+            pathname: template.fill(rootActivity.params),
+            state: {
+              activity: rootActivity,
+              step: lastStep,
+            },
+            useHash: options.useHash,
+          }),
+        );
 
-        const onPopState = (e: PopStateEvent) => {
+        const onPopState: Listener = (e) => {
           if (popFlag) {
             popFlag -= 1;
             return;
           }
 
-          const historyState = parseState(e.state);
+          const historyState = safeParseState(e.location.state);
 
           if (!historyState) {
             return;
@@ -283,9 +301,7 @@ export function historySyncPlugin<
           }
         };
 
-        if (!isServer()) {
-          window.addEventListener("popstate", onPopState);
-        }
+        history.listen(onPopState);
       },
       onPushed({ effect: { activity } }) {
         if (pushFlag) {
@@ -295,15 +311,19 @@ export function historySyncPlugin<
 
         const template = makeTemplate(
           normalizeRoute(options.routes[activity.name])[0],
+          options.urlPatternOptions,
         );
 
-        pushState({
-          url: template.fill(activity.params),
-          state: {
-            activity,
-          },
-          useHash: options.useHash,
-        });
+        queue(() =>
+          pushState({
+            history,
+            pathname: template.fill(activity.params),
+            state: {
+              activity,
+            },
+            useHash: options.useHash,
+          }),
+        );
       },
       onStepPushed({ effect: { activity, step } }) {
         if (pushFlag) {
@@ -313,16 +333,20 @@ export function historySyncPlugin<
 
         const template = makeTemplate(
           normalizeRoute(options.routes[activity.name])[0],
+          options.urlPatternOptions,
         );
 
-        pushState({
-          url: template.fill(activity.params),
-          state: {
-            activity,
-            step,
-          },
-          useHash: options.useHash,
-        });
+        queue(() =>
+          pushState({
+            history,
+            pathname: template.fill(activity.params),
+            state: {
+              activity,
+              step,
+            },
+            useHash: options.useHash,
+          }),
+        );
       },
       onReplaced({ effect: { activity } }) {
         if (!activity.isActive) {
@@ -331,15 +355,19 @@ export function historySyncPlugin<
 
         const template = makeTemplate(
           normalizeRoute(options.routes[activity.name])[0],
+          options.urlPatternOptions,
         );
 
-        replaceState({
-          url: template.fill(activity.params),
-          state: {
-            activity,
-          },
-          useHash: options.useHash,
-        });
+        queue(() =>
+          replaceState({
+            history,
+            pathname: template.fill(activity.params),
+            state: {
+              activity,
+            },
+            useHash: options.useHash,
+          }),
+        );
       },
       onStepReplaced({ effect: { activity, step } }) {
         if (!activity.isActive) {
@@ -348,20 +376,25 @@ export function historySyncPlugin<
 
         const template = makeTemplate(
           normalizeRoute(options.routes[activity.name])[0],
+          options.urlPatternOptions,
         );
 
-        replaceState({
-          url: template.fill(activity.params),
-          state: {
-            activity,
-            step,
-          },
-          useHash: options.useHash,
-        });
+        queue(() =>
+          replaceState({
+            history,
+            pathname: template.fill(activity.params),
+            state: {
+              activity,
+              step,
+            },
+            useHash: options.useHash,
+          }),
+        );
       },
       onBeforePush({ actionParams, actions: { overrideActionParams } }) {
         const template = makeTemplate(
           normalizeRoute(options.routes[actionParams.activityName])[0],
+          options.urlPatternOptions,
         );
         const path = template.fill(actionParams.activityParams);
 
@@ -376,6 +409,7 @@ export function historySyncPlugin<
       onBeforeReplace({ actionParams, actions: { overrideActionParams } }) {
         const template = makeTemplate(
           normalizeRoute(options.routes[actionParams.activityName])[0],
+          options.urlPatternOptions,
         );
         const path = template.fill(actionParams.activityParams);
 
@@ -388,10 +422,6 @@ export function historySyncPlugin<
         });
       },
       onBeforeStepPop({ actions: { getStack } }) {
-        if (isServer()) {
-          return;
-        }
-
         const { activities } = getStack();
         const currentActivity = activities.find(
           (activity) => activity.isActive,
@@ -399,14 +429,10 @@ export function historySyncPlugin<
 
         if ((currentActivity?.steps.length ?? 0) > 1) {
           popFlag += 1;
-          window.history.back();
+          queue(history.back);
         }
       },
       onBeforePop({ actions: { getStack } }) {
-        if (isServer()) {
-          return;
-        }
-
         const { activities } = getStack();
         const currentActivity = activities.find(
           (activity) => activity.isActive,
@@ -417,9 +443,9 @@ export function historySyncPlugin<
 
         do {
           for (let i = 0; i < popCount; i += 1) {
-            window.history.back();
+            queue(history.back);
           }
-        } while (!parseState(getCurrentState()));
+        } while (!safeParseState(getCurrentState({ history })));
       },
     };
   };
