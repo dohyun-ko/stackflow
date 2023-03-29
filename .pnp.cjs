@@ -44,6 +44,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:extensions/plugin-basic-ui"\
       },\
       {\
+        "name": "@stackflow/plugin-devtools",\
+        "reference": "workspace:extensions/plugin-devtools"\
+      },\
+      {\
         "name": "@stackflow/plugin-google-analytics-4",\
         "reference": "workspace:extensions/plugin-google-analytics-4"\
       },\
@@ -93,6 +97,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@stackflow/link", ["virtual:413bca98ff76262f6f1f73762ccc4b7edee04a5da42f3d6b9ed2cb2d6dbc397b2094da59b50f6e828091c88e7b5f86990feff596c43f0eb50a58fc42aae64a20#workspace:extensions/link", "workspace:extensions/link"]],\
       ["@stackflow/monorepo", ["workspace:."]],\
       ["@stackflow/plugin-basic-ui", ["virtual:413bca98ff76262f6f1f73762ccc4b7edee04a5da42f3d6b9ed2cb2d6dbc397b2094da59b50f6e828091c88e7b5f86990feff596c43f0eb50a58fc42aae64a20#workspace:extensions/plugin-basic-ui", "workspace:extensions/plugin-basic-ui"]],\
+      ["@stackflow/plugin-devtools", ["virtual:413bca98ff76262f6f1f73762ccc4b7edee04a5da42f3d6b9ed2cb2d6dbc397b2094da59b50f6e828091c88e7b5f86990feff596c43f0eb50a58fc42aae64a20#workspace:extensions/plugin-devtools", "workspace:extensions/plugin-devtools"]],\
       ["@stackflow/plugin-google-analytics-4", ["workspace:extensions/plugin-google-analytics-4"]],\
       ["@stackflow/plugin-history-sync", ["virtual:413bca98ff76262f6f1f73762ccc4b7edee04a5da42f3d6b9ed2cb2d6dbc397b2094da59b50f6e828091c88e7b5f86990feff596c43f0eb50a58fc42aae64a20#workspace:extensions/plugin-history-sync", "workspace:extensions/plugin-history-sync"]],\
       ["@stackflow/plugin-preload", ["virtual:413bca98ff76262f6f1f73762ccc4b7edee04a5da42f3d6b9ed2cb2d6dbc397b2094da59b50f6e828091c88e7b5f86990feff596c43f0eb50a58fc42aae64a20#workspace:extensions/plugin-preload", "workspace:extensions/plugin-preload"]],\
@@ -1399,6 +1404,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "@types/react",\
             "react-dom",\
             "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@hookform/resolvers", [\
+        ["npm:3.0.0", {\
+          "packageLocation": "./.yarn/cache/@hookform-resolvers-npm-3.0.0-e420f6bffb-72c1282c1b.zip/node_modules/@hookform/resolvers/",\
+          "packageDependencies": [\
+            ["@hookform/resolvers", "npm:3.0.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:9267a8c7a8197fe98a427296be831b128932c88cc3adceb051f2d9b5eeffb2f4b5c162b336fbbf1b8b24ad59ac8a7f62602f782c4d55e1c742a240d86ed9ef62#npm:3.0.0", {\
+          "packageLocation": "./.yarn/__virtual__/@hookform-resolvers-virtual-9c4a4ac5f8/0/cache/@hookform-resolvers-npm-3.0.0-e420f6bffb-72c1282c1b.zip/node_modules/@hookform/resolvers/",\
+          "packageDependencies": [\
+            ["@hookform/resolvers", "virtual:9267a8c7a8197fe98a427296be831b128932c88cc3adceb051f2d9b5eeffb2f4b5c162b336fbbf1b8b24ad59ac8a7f62602f782c4d55e1c742a240d86ed9ef62#npm:3.0.0"],\
+            ["@types/react-hook-form", null],\
+            ["react-hook-form", "virtual:9267a8c7a8197fe98a427296be831b128932c88cc3adceb051f2d9b5eeffb2f4b5c162b336fbbf1b8b24ad59ac8a7f62602f782c4d55e1c742a240d86ed9ef62#npm:7.43.7"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-hook-form",\
+            "react-hook-form"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3776,6 +3803,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@stackflow/eslint-config", "workspace:packages/eslint-config"],\
             ["@stackflow/link", "virtual:413bca98ff76262f6f1f73762ccc4b7edee04a5da42f3d6b9ed2cb2d6dbc397b2094da59b50f6e828091c88e7b5f86990feff596c43f0eb50a58fc42aae64a20#workspace:extensions/link"],\
             ["@stackflow/plugin-basic-ui", "virtual:413bca98ff76262f6f1f73762ccc4b7edee04a5da42f3d6b9ed2cb2d6dbc397b2094da59b50f6e828091c88e7b5f86990feff596c43f0eb50a58fc42aae64a20#workspace:extensions/plugin-basic-ui"],\
+            ["@stackflow/plugin-devtools", "virtual:413bca98ff76262f6f1f73762ccc4b7edee04a5da42f3d6b9ed2cb2d6dbc397b2094da59b50f6e828091c88e7b5f86990feff596c43f0eb50a58fc42aae64a20#workspace:extensions/plugin-devtools"],\
             ["@stackflow/plugin-history-sync", "virtual:413bca98ff76262f6f1f73762ccc4b7edee04a5da42f3d6b9ed2cb2d6dbc397b2094da59b50f6e828091c88e7b5f86990feff596c43f0eb50a58fc42aae64a20#workspace:extensions/plugin-history-sync"],\
             ["@stackflow/plugin-preload", "virtual:413bca98ff76262f6f1f73762ccc4b7edee04a5da42f3d6b9ed2cb2d6dbc397b2094da59b50f6e828091c88e7b5f86990feff596c43f0eb50a58fc42aae64a20#workspace:extensions/plugin-preload"],\
             ["@stackflow/plugin-renderer-basic", "virtual:413bca98ff76262f6f1f73762ccc4b7edee04a5da42f3d6b9ed2cb2d6dbc397b2094da59b50f6e828091c88e7b5f86990feff596c43f0eb50a58fc42aae64a20#workspace:extensions/plugin-renderer-basic"],\
@@ -3818,14 +3846,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@stackflow/devtools", "workspace:devtools"],\
             ["@crxjs/vite-plugin", "npm:2.0.0-beta.15"],\
+            ["@hookform/resolvers", "virtual:9267a8c7a8197fe98a427296be831b128932c88cc3adceb051f2d9b5eeffb2f4b5c162b336fbbf1b8b24ad59ac8a7f62602f782c4d55e1c742a240d86ed9ef62#npm:3.0.0"],\
             ["@rjsf/core", "virtual:9267a8c7a8197fe98a427296be831b128932c88cc3adceb051f2d9b5eeffb2f4b5c162b336fbbf1b8b24ad59ac8a7f62602f782c4d55e1c742a240d86ed9ef62#npm:5.2.1"],\
             ["@rjsf/utils", "virtual:9267a8c7a8197fe98a427296be831b128932c88cc3adceb051f2d9b5eeffb2f4b5c162b336fbbf1b8b24ad59ac8a7f62602f782c4d55e1c742a240d86ed9ef62#npm:5.2.1"],\
             ["@rjsf/validator-ajv8", "virtual:9267a8c7a8197fe98a427296be831b128932c88cc3adceb051f2d9b5eeffb2f4b5c162b336fbbf1b8b24ad59ac8a7f62602f782c4d55e1c742a240d86ed9ef62#npm:5.2.1"],\
             ["@stackflow/core", "workspace:core"],\
+            ["@stackflow/plugin-devtools", "virtual:413bca98ff76262f6f1f73762ccc4b7edee04a5da42f3d6b9ed2cb2d6dbc397b2094da59b50f6e828091c88e7b5f86990feff596c43f0eb50a58fc42aae64a20#workspace:extensions/plugin-devtools"],\
             ["@swc/core", "npm:1.3.40"],\
             ["@swc/jest", "virtual:9267a8c7a8197fe98a427296be831b128932c88cc3adceb051f2d9b5eeffb2f4b5c162b336fbbf1b8b24ad59ac8a7f62602f782c4d55e1c742a240d86ed9ef62#npm:0.2.24"],\
+            ["@ts-react/form", "virtual:9267a8c7a8197fe98a427296be831b128932c88cc3adceb051f2d9b5eeffb2f4b5c162b336fbbf1b8b24ad59ac8a7f62602f782c4d55e1c742a240d86ed9ef62#npm:1.4.5"],\
             ["@types/chrome", "npm:0.0.223"],\
             ["@types/jest", "npm:28.1.6"],\
+            ["@types/json-schema", "npm:7.0.11"],\
             ["@types/react", "npm:18.0.15"],\
             ["@types/react-dom", "npm:18.0.5"],\
             ["@vanilla-extract/css", "npm:1.10.0"],\
@@ -3836,12 +3868,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "virtual:b327d7e228fba669b88a8bb23bcf526374e46fa67e617b1e6848e8a205357fee5ce94b47c49b5a570fd9e8a44fa218a13cd00e2eca327c99114cbd21d72ecf9c#npm:28.1.0"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:413bca98ff76262f6f1f73762ccc4b7edee04a5da42f3d6b9ed2cb2d6dbc397b2094da59b50f6e828091c88e7b5f86990feff596c43f0eb50a58fc42aae64a20#npm:18.2.0"],\
+            ["react-hook-form", "virtual:9267a8c7a8197fe98a427296be831b128932c88cc3adceb051f2d9b5eeffb2f4b5c162b336fbbf1b8b24ad59ac8a7f62602f782c4d55e1c742a240d86ed9ef62#npm:7.43.7"],\
             ["react-modal", "virtual:9267a8c7a8197fe98a427296be831b128932c88cc3adceb051f2d9b5eeffb2f4b5c162b336fbbf1b8b24ad59ac8a7f62602f782c4d55e1c742a240d86ed9ef62#npm:3.16.1"],\
             ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=701156"],\
             ["uniforms", "virtual:9267a8c7a8197fe98a427296be831b128932c88cc3adceb051f2d9b5eeffb2f4b5c162b336fbbf1b8b24ad59ac8a7f62602f782c4d55e1c742a240d86ed9ef62#npm:4.0.0-alpha.2"],\
             ["uniforms-bridge-json-schema", "npm:4.0.0-alpha.2"],\
             ["uniforms-semantic", "virtual:9267a8c7a8197fe98a427296be831b128932c88cc3adceb051f2d9b5eeffb2f4b5c162b336fbbf1b8b24ad59ac8a7f62602f782c4d55e1c742a240d86ed9ef62#npm:4.0.0-alpha.2"],\
-            ["vite", "virtual:80ba3ef979efb15f4249b77ae8473c1910fee4fb9da9347c7f2d9cf129c03d9c71a611ca716a78a70270bffa004a64098836dd1f5443efa82bbdb8eed5657c3b#npm:4.1.4"]\
+            ["vite", "virtual:80ba3ef979efb15f4249b77ae8473c1910fee4fb9da9347c7f2d9cf129c03d9c71a611ca716a78a70270bffa004a64098836dd1f5443efa82bbdb8eed5657c3b#npm:4.1.4"],\
+            ["zod", "npm:3.21.4"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -4078,6 +4112,63 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["rimraf", "npm:3.0.2"],\
             ["ts-pattern", "npm:4.0.5"],\
+            ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=701156"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["@stackflow/plugin-devtools", [\
+        ["virtual:413bca98ff76262f6f1f73762ccc4b7edee04a5da42f3d6b9ed2cb2d6dbc397b2094da59b50f6e828091c88e7b5f86990feff596c43f0eb50a58fc42aae64a20#workspace:extensions/plugin-devtools", {\
+          "packageLocation": "./.yarn/__virtual__/@stackflow-plugin-devtools-virtual-c455a7050e/1/extensions/plugin-devtools/",\
+          "packageDependencies": [\
+            ["@stackflow/plugin-devtools", "virtual:413bca98ff76262f6f1f73762ccc4b7edee04a5da42f3d6b9ed2cb2d6dbc397b2094da59b50f6e828091c88e7b5f86990feff596c43f0eb50a58fc42aae64a20#workspace:extensions/plugin-devtools"],\
+            ["@stackflow/core", "workspace:core"],\
+            ["@stackflow/esbuild-config", "workspace:packages/esbuild-config"],\
+            ["@stackflow/eslint-config", "workspace:packages/eslint-config"],\
+            ["@types/node", "npm:18.6.3"],\
+            ["@types/stackflow__core", null],\
+            ["@typescript-eslint/eslint-plugin", "virtual:b327d7e228fba669b88a8bb23bcf526374e46fa67e617b1e6848e8a205357fee5ce94b47c49b5a570fd9e8a44fa218a13cd00e2eca327c99114cbd21d72ecf9c#npm:5.32.0"],\
+            ["@typescript-eslint/parser", "virtual:b327d7e228fba669b88a8bb23bcf526374e46fa67e617b1e6848e8a205357fee5ce94b47c49b5a570fd9e8a44fa218a13cd00e2eca327c99114cbd21d72ecf9c#npm:5.28.0"],\
+            ["esbuild", "npm:0.16.17"],\
+            ["eslint", "npm:8.14.0"],\
+            ["eslint-config-airbnb", "virtual:413bca98ff76262f6f1f73762ccc4b7edee04a5da42f3d6b9ed2cb2d6dbc397b2094da59b50f6e828091c88e7b5f86990feff596c43f0eb50a58fc42aae64a20#npm:19.0.4"],\
+            ["eslint-config-prettier", "virtual:5d222998b86cceed4c8d843e557f0e3b94c8ccb1e8952571a8d45c8a6806e6624abcd819a5fa16c66371a9250ca177cd0fc04f42e577bbbc49771098023bb79e#npm:8.5.0"],\
+            ["eslint-plugin-import", "virtual:b327d7e228fba669b88a8bb23bcf526374e46fa67e617b1e6848e8a205357fee5ce94b47c49b5a570fd9e8a44fa218a13cd00e2eca327c99114cbd21d72ecf9c#npm:2.26.0"],\
+            ["eslint-plugin-json-format", "virtual:5d222998b86cceed4c8d843e557f0e3b94c8ccb1e8952571a8d45c8a6806e6624abcd819a5fa16c66371a9250ca177cd0fc04f42e577bbbc49771098023bb79e#npm:2.0.1"],\
+            ["eslint-plugin-jsx-a11y", "virtual:5d222998b86cceed4c8d843e557f0e3b94c8ccb1e8952571a8d45c8a6806e6624abcd819a5fa16c66371a9250ca177cd0fc04f42e577bbbc49771098023bb79e#npm:6.5.1"],\
+            ["eslint-plugin-react", "virtual:5d222998b86cceed4c8d843e557f0e3b94c8ccb1e8952571a8d45c8a6806e6624abcd819a5fa16c66371a9250ca177cd0fc04f42e577bbbc49771098023bb79e#npm:7.30.0"],\
+            ["eslint-plugin-react-hooks", "virtual:5d222998b86cceed4c8d843e557f0e3b94c8ccb1e8952571a8d45c8a6806e6624abcd819a5fa16c66371a9250ca177cd0fc04f42e577bbbc49771098023bb79e#npm:4.6.0"],\
+            ["eslint-plugin-simple-import-sort", "virtual:5d222998b86cceed4c8d843e557f0e3b94c8ccb1e8952571a8d45c8a6806e6624abcd819a5fa16c66371a9250ca177cd0fc04f42e577bbbc49771098023bb79e#npm:7.0.0"],\
+            ["rimraf", "npm:3.0.2"],\
+            ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=701156"]\
+          ],\
+          "packagePeers": [\
+            "@stackflow/core",\
+            "@types/stackflow__core"\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["workspace:extensions/plugin-devtools", {\
+          "packageLocation": "./extensions/plugin-devtools/",\
+          "packageDependencies": [\
+            ["@stackflow/plugin-devtools", "workspace:extensions/plugin-devtools"],\
+            ["@stackflow/core", "workspace:core"],\
+            ["@stackflow/esbuild-config", "workspace:packages/esbuild-config"],\
+            ["@stackflow/eslint-config", "workspace:packages/eslint-config"],\
+            ["@types/node", "npm:18.6.3"],\
+            ["@typescript-eslint/eslint-plugin", "virtual:b327d7e228fba669b88a8bb23bcf526374e46fa67e617b1e6848e8a205357fee5ce94b47c49b5a570fd9e8a44fa218a13cd00e2eca327c99114cbd21d72ecf9c#npm:5.32.0"],\
+            ["@typescript-eslint/parser", "virtual:b327d7e228fba669b88a8bb23bcf526374e46fa67e617b1e6848e8a205357fee5ce94b47c49b5a570fd9e8a44fa218a13cd00e2eca327c99114cbd21d72ecf9c#npm:5.28.0"],\
+            ["esbuild", "npm:0.16.17"],\
+            ["eslint", "npm:8.14.0"],\
+            ["eslint-config-airbnb", "virtual:413bca98ff76262f6f1f73762ccc4b7edee04a5da42f3d6b9ed2cb2d6dbc397b2094da59b50f6e828091c88e7b5f86990feff596c43f0eb50a58fc42aae64a20#npm:19.0.4"],\
+            ["eslint-config-prettier", "virtual:5d222998b86cceed4c8d843e557f0e3b94c8ccb1e8952571a8d45c8a6806e6624abcd819a5fa16c66371a9250ca177cd0fc04f42e577bbbc49771098023bb79e#npm:8.5.0"],\
+            ["eslint-plugin-import", "virtual:b327d7e228fba669b88a8bb23bcf526374e46fa67e617b1e6848e8a205357fee5ce94b47c49b5a570fd9e8a44fa218a13cd00e2eca327c99114cbd21d72ecf9c#npm:2.26.0"],\
+            ["eslint-plugin-json-format", "virtual:5d222998b86cceed4c8d843e557f0e3b94c8ccb1e8952571a8d45c8a6806e6624abcd819a5fa16c66371a9250ca177cd0fc04f42e577bbbc49771098023bb79e#npm:2.0.1"],\
+            ["eslint-plugin-jsx-a11y", "virtual:5d222998b86cceed4c8d843e557f0e3b94c8ccb1e8952571a8d45c8a6806e6624abcd819a5fa16c66371a9250ca177cd0fc04f42e577bbbc49771098023bb79e#npm:6.5.1"],\
+            ["eslint-plugin-react", "virtual:5d222998b86cceed4c8d843e557f0e3b94c8ccb1e8952571a8d45c8a6806e6624abcd819a5fa16c66371a9250ca177cd0fc04f42e577bbbc49771098023bb79e#npm:7.30.0"],\
+            ["eslint-plugin-react-hooks", "virtual:5d222998b86cceed4c8d843e557f0e3b94c8ccb1e8952571a8d45c8a6806e6624abcd819a5fa16c66371a9250ca177cd0fc04f42e577bbbc49771098023bb79e#npm:4.6.0"],\
+            ["eslint-plugin-simple-import-sort", "virtual:5d222998b86cceed4c8d843e557f0e3b94c8ccb1e8952571a8d45c8a6806e6624abcd819a5fa16c66371a9250ca177cd0fc04f42e577bbbc49771098023bb79e#npm:7.0.0"],\
+            ["rimraf", "npm:3.0.2"],\
             ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=701156"]\
           ],\
           "linkType": "SOFT"\
@@ -4733,6 +4824,40 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@tootallnate-once-npm-2.0.0-e36cf4f140-ad87447820.zip/node_modules/@tootallnate/once/",\
           "packageDependencies": [\
             ["@tootallnate/once", "npm:2.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@ts-react/form", [\
+        ["npm:1.4.5", {\
+          "packageLocation": "./.yarn/cache/@ts-react-form-npm-1.4.5-f608e90e2e-78a0f0c889.zip/node_modules/@ts-react/form/",\
+          "packageDependencies": [\
+            ["@ts-react/form", "npm:1.4.5"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:9267a8c7a8197fe98a427296be831b128932c88cc3adceb051f2d9b5eeffb2f4b5c162b336fbbf1b8b24ad59ac8a7f62602f782c4d55e1c742a240d86ed9ef62#npm:1.4.5", {\
+          "packageLocation": "./.yarn/__virtual__/@ts-react-form-virtual-07a44d1938/0/cache/@ts-react-form-npm-1.4.5-f608e90e2e-78a0f0c889.zip/node_modules/@ts-react/form/",\
+          "packageDependencies": [\
+            ["@ts-react/form", "virtual:9267a8c7a8197fe98a427296be831b128932c88cc3adceb051f2d9b5eeffb2f4b5c162b336fbbf1b8b24ad59ac8a7f62602f782c4d55e1c742a240d86ed9ef62#npm:1.4.5"],\
+            ["@hookform/resolvers", "virtual:9267a8c7a8197fe98a427296be831b128932c88cc3adceb051f2d9b5eeffb2f4b5c162b336fbbf1b8b24ad59ac8a7f62602f782c4d55e1c742a240d86ed9ef62#npm:3.0.0"],\
+            ["@types/hookform__resolvers", null],\
+            ["@types/react", "npm:18.0.15"],\
+            ["@types/react-hook-form", null],\
+            ["@types/zod", null],\
+            ["react", "npm:18.2.0"],\
+            ["react-hook-form", "virtual:9267a8c7a8197fe98a427296be831b128932c88cc3adceb051f2d9b5eeffb2f4b5c162b336fbbf1b8b24ad59ac8a7f62602f782c4d55e1c742a240d86ed9ef62#npm:7.43.7"],\
+            ["zod", "npm:3.21.4"]\
+          ],\
+          "packagePeers": [\
+            "@hookform/resolvers",\
+            "@types/hookform__resolvers",\
+            "@types/react-hook-form",\
+            "@types/react",\
+            "@types/zod",\
+            "react-hook-form",\
+            "react",\
+            "zod"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -15309,6 +15434,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/react-ga4-npm-1.4.1-7ad3cf5578-4c33ecb47d.zip/node_modules/react-ga4/",\
           "packageDependencies": [\
             ["react-ga4", "npm:1.4.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["react-hook-form", [\
+        ["npm:7.43.7", {\
+          "packageLocation": "./.yarn/cache/react-hook-form-npm-7.43.7-88f7c487b2-c1679fc511.zip/node_modules/react-hook-form/",\
+          "packageDependencies": [\
+            ["react-hook-form", "npm:7.43.7"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:9267a8c7a8197fe98a427296be831b128932c88cc3adceb051f2d9b5eeffb2f4b5c162b336fbbf1b8b24ad59ac8a7f62602f782c4d55e1c742a240d86ed9ef62#npm:7.43.7", {\
+          "packageLocation": "./.yarn/__virtual__/react-hook-form-virtual-78766b9b3b/0/cache/react-hook-form-npm-7.43.7-88f7c487b2-c1679fc511.zip/node_modules/react-hook-form/",\
+          "packageDependencies": [\
+            ["react-hook-form", "virtual:9267a8c7a8197fe98a427296be831b128932c88cc3adceb051f2d9b5eeffb2f4b5c162b336fbbf1b8b24ad59ac8a7f62602f782c4d55e1c742a240d86ed9ef62#npm:7.43.7"],\
+            ["@types/react", "npm:18.0.15"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\
