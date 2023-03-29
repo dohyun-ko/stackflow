@@ -3115,7 +3115,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@stackflow/plugin-devtools@workspace:extensions/plugin-devtools":
+"@stackflow/plugin-devtools@workspace:^, @stackflow/plugin-devtools@workspace:extensions/plugin-devtools":
   version: 0.0.0-use.local
   resolution: "@stackflow/plugin-devtools@workspace:extensions/plugin-devtools"
   dependencies:
