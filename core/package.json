@@ -1,6 +1,6 @@
 {
   "name": "@stackflow/core",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "MIT",
   "exports": {
     ".": {
@@ -22,7 +22,8 @@
     "build:js": "node ./esbuild.config.js",
     "clean": "rimraf dist",
     "dev": "yarn test --watch && yarn build:js --watch && yarn build:dts --watch",
-    "test": "yarn jest"
+    "test": "yarn jest",
+    "typecheck": "tsc --noEmit"
   },
   "jest": {
     "coveragePathIgnorePatterns": [

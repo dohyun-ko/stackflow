@@ -1,6 +1,6 @@
 {
   "name": "@stackflow/plugin-stack-depth-change",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "MIT",
   "exports": {
     ".": {
@@ -21,10 +21,11 @@
     "build:dts": "tsc --emitDeclarationOnly",
     "build:js": "node ./esbuild.config.js",
     "clean": "rimraf dist",
-    "dev": "yarn build:js --watch && yarn build:dts --watch"
+    "dev": "yarn build:js --watch && yarn build:dts --watch",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@stackflow/core": "^1.0.3",
+    "@stackflow/core": "^1.0.4",
     "@stackflow/esbuild-config": "^1.0.0",
     "@stackflow/eslint-config": "^1.0.0",
     "@types/node": "^18.6.3",
