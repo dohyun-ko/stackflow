@@ -113,11 +113,15 @@ export function loaderPlugin<
     }) {
       const { activityName, activityParams, activityContext } = actionParams;
 
-      const loader = input.config.activities.find(
+      const matchActivity = input.config.activities.find(
         (activity) => activity.name === activityName,
-      )?.loader;
+      );
+      const matchActivityComponent =
+        input.components[activityName as T["name"]];
 
-      if (!loader) {
+      const loader = matchActivity?.loader;
+
+      if (!loader || !matchActivityComponent) {
         return;
       }
 
@@ -126,10 +130,19 @@ export function loaderPlugin<
         config: input.config,
       });
 
-      if (loaderData instanceof Promise) {
+      if (loaderData instanceof Promise || "load" in matchActivityComponent) {
         dispatchEvent("Paused", {});
 
-        loaderData.finally(() => {
+        const promises: Array<Promise<any>> = [];
+
+        if (loaderData instanceof Promise) {
+          promises.push(loaderData);
+        }
+        if ("load" in matchActivityComponent) {
+          promises.push(matchActivityComponent.load());
+        }
+
+        Promise.all(promises).finally(() => {
           dispatchEvent("Resumed", {});
         });
       }
