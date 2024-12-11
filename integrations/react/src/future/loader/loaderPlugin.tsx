@@ -8,7 +8,7 @@ export function loaderPlugin<
   R extends {
     [activityName in T["name"]]:
       | ActivityComponentType<any>
-      | { load: () => Promise<{ default: ActivityComponentType<any> }> };
+      | { lazy: () => Promise<{ default: ActivityComponentType<any> }> };
   },
 >(input: StackflowInput<T, R>): StackflowReactPlugin {
   return () => ({
@@ -90,8 +90,8 @@ export function loaderPlugin<
         if (loaderData instanceof Promise) {
           promises.push(loaderData);
         }
-        if ("load" in matchActivityComponent) {
-          promises.push(matchActivityComponent.load());
+        if ("lazy" in matchActivityComponent) {
+          promises.push(matchActivityComponent.lazy());
         }
 
         Promise.all(promises).finally(() => {
@@ -138,8 +138,8 @@ export function loaderPlugin<
         if (loaderData instanceof Promise) {
           promises.push(loaderData);
         }
-        if ("load" in matchActivityComponent) {
-          promises.push(matchActivityComponent.load());
+        if ("lazy" in matchActivityComponent) {
+          promises.push(matchActivityComponent.lazy());
         }
 
         Promise.all(promises).finally(() => {
